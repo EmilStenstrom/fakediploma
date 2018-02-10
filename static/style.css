@@ -1,0 +1,98 @@
+html {
+    background: #222;
+}
+body {
+    background: white;
+    margin: 1em auto 0;
+    max-width: 700px;
+    padding: .5em 2em;
+}
+a {
+    color: grey;
+}
+.diploma {
+    background-image: url("/static/img/$background");
+    color: #4B4B49;
+    font-size: 1.2em;
+    font-family: "Diploma";
+    text-align: center;
+    position: relative;
+    border: 2px double #C3A36D;
+    padding: 0 2em;
+}
+.diploma:before {
+    content: " ";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border: 1px solid #C3A36D;
+}
+.title {
+    color: #C3A36D;
+    font-family: "Fancy";
+    line-height: 1;
+    margin-top: 1em;
+}
+.title span {
+    font-family: "Arial";
+    font-size: 0.5em;
+    display: inline-block;
+}
+.name {
+    color: #C3A36D;
+    font-size: 2em;
+    font-weight: bold;
+    margin: 0;
+}
+.degree, .major {
+    color: black;
+    font-size: 2em;
+    font-weight: bold;
+    margin: 0;
+}
+.byline {
+    margin-top: 0.25em;
+    margin-bottom: 0em;
+}
+.major {
+    font-size: 3em;
+    margin-bottom: 1em;
+}
+.signatures {
+    margin: 4em 0 3em;;
+    display: flex;
+}
+.block {
+    flex-grow: 1;
+    flex-basis: 50%;
+    margin-top: auto;
+}
+.block_middle {
+    flex-basis: 0;
+    position: relative;
+}
+.seal2 {
+    position: absolute;
+    top: -20px;
+    left: -30px;
+}
+.signature_name {
+    color: #000F55;
+    font-size: 1.2em;
+    font-weight: bold;
+    border-bottom: 2px solid black;
+    display: inline-block;
+    padding: 0 1em;
+}
+.signature_name_1 { font-family: "Handwriting1", fantasy; }
+.signature_name_2 { font-family: "Handwriting2", fantasy; }
+.signature_title {
+    font-size: 0.7em;
+    font-style: italic;
+    margin-top: -1em;
+}
+.footer {
+    font-size: 0.8em;
+}

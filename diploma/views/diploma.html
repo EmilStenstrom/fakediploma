@@ -1,0 +1,67 @@
+    <!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>University Diploma Generator - $university_name</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+    <style>
+        @font-face {
+            font-family: "Fancy";
+            src: url("/static/fonts/$fancy_font");
+        }
+        @font-face {
+            font-family: "Handwriting1";
+            src: url("/static/fonts/$signature1_font");
+        }
+        @font-face {
+            font-family: "Handwriting2";
+            src: url("/static/fonts/$signature2_font");
+        }
+        @font-face {
+            font-family: "Diploma";
+            src: url("/static/fonts/diploma_regular.ttf");
+        }
+
+        .title {
+            font-size: $title_font_size;
+        }
+    </style>
+</head>
+
+<body class="diploma">
+    <h1 class="title">$university_name</h1>
+
+    <p>$verb</p>
+
+    <p class="name">$name</p>
+
+    <p>$accomplishment</p>
+
+    <p class="degree">$degree</p>
+
+    <p class="byline">with a major in</p>
+
+    <p class="major">$major</p>
+
+    <p>$granter $proof</p>
+
+    <div class="signatures">
+        <div class="block">
+            <p class="signature_name signature_name_1">$signature1_name</p>
+            <p class="signature_title">$signature1_title</p>
+        </div>
+        <div class="block block_middle">
+            <img class="seal" src="/static/img/$seal">
+        </div>
+        <div class="block">
+            <p class="signature_name signature_name_2">$signature2_name</p>
+            <p class="signature_title">$signature2_title</p>
+        </div>
+    </div>
+
+    <p class="footer">$date - $university_country</p>
+</body>
+
+</html>

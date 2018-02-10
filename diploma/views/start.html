@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="utf-8">
+    <title>University Diploma Generator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+    <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgo=">
+    <style>
+        @font-face {
+            font-family: "Diploma";
+            src: url("/static/fonts/diploma_regular.ttf");
+        }
+        h1 {
+            font-family: "Diploma";
+            font-size: 3em;
+        }
+        form {
+            font-size: 2em;
+        }
+        input {
+            font-size: 1em;
+        }
+        button {
+            border: none;
+            padding: 5px 10px;
+            background: red;
+            font-size: 1em;
+            color: white;
+            border-radius: 5px;
+            box-shadow: 2px 2px grey;
+        }
+        button:hover {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>So you want a university degree?</h1>
+
+    <p>Don't spend money on those expensive sites, use the DIPLOMA GENERATOR!</p>
+
+    <ul>
+        <li>We only use REAL universities.</li>
+        <li>Signees have names from the correct country.</li>
+        <li>All majors are real (google them to see!)</li>
+    </ul>
+
+    <form action="/generate" method="get">
+        <p>
+            <label for="name">Type your name:</label>
+            <input name="name" id="name" type="text" required autocomplete="off">
+        </p>
+
+        <p>
+            <button type="submit">Get diploma now!</button>
+        </p>
+    </form>
+
+    <p><a href="https://twitter.com/EmilStenstrom">No way affiliated with...</a>
+</body>
+</html>
