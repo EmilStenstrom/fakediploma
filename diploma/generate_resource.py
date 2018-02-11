@@ -139,6 +139,7 @@ FANCY_FONTS = [
     "chunkfive.otf",
     "proclamate_heavy.ttf",
     "proclamate_incised.ttf",
+    "polaris.ttf",
 ]
 HANDWRITING_FONTS = [
     "herr_von_muellerhoff.otf",
