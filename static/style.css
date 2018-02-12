@@ -1,14 +1,45 @@
 html {
     background: #222;
 }
-body {
-    background: white;
-    margin: 1em auto 0;
-    max-width: 700px;
-    padding: .5em 2em;
-}
 a {
-    color: grey;
+    color: #bbb;
+}
+body {
+    margin: 0;
+}
+button {
+    border: none;
+    padding: 5px 10px;
+    background: #C3A36D;
+    font-size: 1em;
+    color: white;
+    border-radius: 5px;
+    box-shadow: 2px 2px #bbb;
+}
+button:hover {
+    cursor: pointer;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    color: #bbb;
+    margin: 0 auto;
+    width: calc(700px + 2em + 2em + 10px);
+    padding: 10px 2em;
+    overflow: hidden;
+}
+    .header span {
+        height: 100%;
+        max-width: 80%;
+    }
+.container {
+    background: white;
+    margin: 0 auto;
+    width: 700px;
+    padding: .5em 2em;
 }
 .diploma {
     background-image: url("/static/img/$background");

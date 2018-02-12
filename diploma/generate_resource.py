@@ -27,6 +27,7 @@ class GenerateResource:
         response.content_type = "text/html"
         response.body = diploma_template.substitute(
             site="%s://%s" % (request.protocol, request.headers["HOST"]),
+            new_diploma_id=generate_seed(),
             **diploma(
                 seed=request.get_param("diploma_id") or generate_seed(),
                 name=request.get_param("name") or "John Doe"

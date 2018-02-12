@@ -22,41 +22,54 @@
         .title {
             font-size: $title_font_size;
         }
+        button {
+            float: right;
+        }
     </style>
 </head>
 
-<body class="diploma">
-    <h1 class="title">$university_name</h1>
-
-    <p>$verb</p>
-
-    <p class="name">$name</p>
-
-    <p>$accomplishment</p>
-
-    <p class="degree">$degree</p>
-
-    <p class="byline">with a major in</p>
-
-    <p class="major">$major</p>
-
-    <p>$granter $proof</p>
-
-    <div class="signatures">
-        <div class="block">
-            <p class="signature_name signature_name_1">$signature1_name</p>
-            <p class="signature_title">$signature1_title</p>
-        </div>
-        <div class="block block_middle">
-            <img class="seal" src="/static/img/$seal">
-        </div>
-        <div class="block">
-            <p class="signature_name signature_name_2">$signature2_name</p>
-            <p class="signature_title">$signature2_title</p>
-        </div>
+<body>
+    <div class="header">
+        <span><a href="/">&laquo; Back</a> - Diploma from "$university_name" in $university_country</span>
+        <form action="/generate" method="get">
+            <input type="hidden" name="name" value="$name">
+            <input type="hidden" name="diploma_id" value="$new_diploma_id">
+            <button type="submit">New diploma</button>
+        </form>
     </div>
+    <div class="container diploma">
+        <h1 class="title">$university_name</h1>
 
-    <p class="footer">$date - $university_country</p>
+        <p>$verb</p>
+
+        <p class="name">$name</p>
+
+        <p>$accomplishment</p>
+
+        <p class="degree">$degree</p>
+
+        <p class="byline">with a major in</p>
+
+        <p class="major">$major</p>
+
+        <p>$granter $proof</p>
+
+        <div class="signatures">
+            <div class="block">
+                <p class="signature_name signature_name_1">$signature1_name</p>
+                <p class="signature_title">$signature1_title</p>
+            </div>
+            <div class="block block_middle">
+                <img class="seal" src="/static/img/$seal">
+            </div>
+            <div class="block">
+                <p class="signature_name signature_name_2">$signature2_name</p>
+                <p class="signature_title">$signature2_title</p>
+            </div>
+        </div>
+
+        <p class="footer">$date - $university_country</p>
+    </div>
 </body>
 
 </html>
