@@ -1,3 +1,4 @@
+import sys
 import json
 import os.path
 import random
@@ -15,7 +16,8 @@ class StartResource:
         start_template = Template(open("diploma/views/start.html", "r").read())
         response.content_type = "text/html"
         response.body = start_template.substitute(
-            site="%s://%s" % (request.protocol, request.headers["HOST"])
+            site="%s://%s" % (request.protocol, request.headers["HOST"]),
+            diploma_id=generate_seed()
         )
 
 class GenerateResource:
@@ -25,10 +27,19 @@ class GenerateResource:
         response.content_type = "text/html"
         response.body = diploma_template.substitute(
             site="%s://%s" % (request.protocol, request.headers["HOST"]),
-            **diploma(request.get_param("name") or "John Doe")
+            **diploma(
+                seed=request.get_param("diploma_id") or generate_seed(),
+                name=request.get_param("name") or "John Doe"
+            )
         )
 
-def diploma(name):
+def generate_seed():
+    random.seed()
+    return random.randint(0, sys.maxsize)
+
+def diploma(seed, name):
+    random.seed(seed)
+
     if os.path.isfile("universities.json"):
         with open("universities.json", "r") as f:
             university = random.choice(json.load(f))
