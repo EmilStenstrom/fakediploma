@@ -21,9 +21,9 @@ class StartResource:
 class GenerateResource:
     def on_get(self, request, response):
         response.set_header("Strict-Transport-Security", "max-age=31536000")
-        disploma_template = Template(open("diploma/views/diploma.html", "r").read())
+        diploma_template = Template(open("diploma/views/diploma.html", "r").read())
         response.content_type = "text/html"
-        response.body = disploma_template.substitute(
+        response.body = diploma_template.substitute(
             site="%s://%s" % (request.protocol, request.headers["HOST"]),
             **diploma(request.get_param("name") or "John Doe")
         )
