@@ -1,5 +1,5 @@
 # Application dependencencies
 falcon==1.4.1
 gunicorn==19.7.1
-elizabeth==0.4.0
+mimesis==3.0.0
 babel==2.5.3

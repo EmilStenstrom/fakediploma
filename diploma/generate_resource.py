@@ -7,7 +7,7 @@ from datetime import datetime
 
 import babel
 from babel import Locale, dates
-from elizabeth import Personal, exceptions
+from mimesis import Person, exceptions
 
 
 class StartResource:
@@ -97,9 +97,9 @@ def get_names(language, num_names):
 
     while len(names) < num_names:
         try:
-            name = Personal(language).full_name()
+            name = Person(language).full_name()
         except exceptions.UnsupportedLocale:
-            name = Personal("en").full_name()
+            name = Person("en").full_name()
 
         name = avoid_hanging_word(name)
         names.add(name)
