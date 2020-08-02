@@ -1,0 +1,5 @@
+# Application dependencencies
+falcon
+gunicorn
+mimesis
+babel
