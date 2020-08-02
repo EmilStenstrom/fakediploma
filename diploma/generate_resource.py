@@ -16,7 +16,7 @@ class StartResource:
         start_template = Template(open("diploma/views/start.html", "r").read())
         response.content_type = "text/html"
         response.body = start_template.substitute(
-            site="%s://%s" % (request.protocol, request.headers["HOST"]),
+            site="%s://%s" % (request.scheme, request.headers["HOST"]),
             diploma_id=generate_seed()
         )
 
@@ -26,7 +26,7 @@ class GenerateResource:
         diploma_template = Template(open("diploma/views/diploma.html", "r").read())
         response.content_type = "text/html"
         response.body = diploma_template.substitute(
-            site="%s://%s" % (request.protocol, request.headers["HOST"]),
+            site="%s://%s" % (request.scheme, request.headers["HOST"]),
             new_diploma_id=generate_seed(),
             **diploma(
                 seed=request.get_param("diploma_id") or generate_seed(),

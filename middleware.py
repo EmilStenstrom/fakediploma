@@ -9,7 +9,7 @@ class RedirectToHTTPS:
         if request.host in ["localhost", "127.0.0.1"]:
             return
 
-        if request.protocol.lower() == 'https':
+        if request.scheme.lower() == 'https':
             return
 
         xfp = request.get_header('X-FORWARDED-PROTO')
