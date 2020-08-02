@@ -1,1 +1,1 @@
-web: gunicorn server:app --preload --config gunicorn_config.py
+web: gunicorn server:app --log-file -
