@@ -53,9 +53,9 @@ def diploma(seed, name):
     except babel.core.UnknownLocaleError:
         locale = None
 
-    signature1_name, signature2_name = get_names(locale.language if locale else "en", 2)
-    signature1_title, signature2_title = get_titles(2)
-    signature1_font, signature2_font = get_handwriting_fonts(2)
+    signature1_name, signature2_name = get_names(locale.language if locale else "en", num_names=2, seed=seed)
+    signature1_title, signature2_title = get_titles(num_titles=2)
+    signature1_font, signature2_font = get_handwriting_fonts(num_fonts=2)
 
     if len(university["name"]) < 20:
         title_font_size = "4em"
@@ -92,14 +92,14 @@ def diploma(seed, name):
         "date": dates.format_date(datetime.today(), locale=locale or "en")
     }
 
-def get_names(language, num_names):
+def get_names(language, num_names, seed):
     names = set()
 
-    while len(names) < num_names:
+    for name_num in range(num_names):
         try:
-            name = Person(language).full_name()
+            name = Person(locale=language, seed=int(seed) + name_num).full_name()
         except exceptions.UnsupportedLocale:
-            name = Person("en").full_name()
+            name = Person(locale="en", seed=int(seed) + name_num).full_name()
 
         name = avoid_hanging_word(name)
         names.add(name)
