@@ -12,7 +12,7 @@ falcon==3.0.0
     # via -r requirements.in
 flake8==3.9.0
     # via -r requirements-dev.in
-gunicorn==22.0.0
+gunicorn==23.0.0
     # via -r requirements.in
 mccabe==0.6.1
     # via flake8
